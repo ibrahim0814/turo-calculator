@@ -1,10 +1,12 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { InputGroup, FormControl, Form, Button, Alert } from "react-bootstrap"
+import LeaseDetails from "../components/sections/lease-details"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { InputGroup, FormControl, Form, Button } from "react-bootstrap"
+import GatsbyLinkStyled from "../components/gatsby-link-styled"
 
 const initialState = {
   lease: {
@@ -31,50 +33,20 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Turo Earnings Calculator" />
 
-      {/* <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    /> */}
       <h2 style={{ textAlign: "center" }}>
-        Figure out how much you can earn on Turo
+        <Alert variant="secondary">
+          Estimate earnings from{" "}
+          <GatsbyLinkStyled
+            page="/blog/micro-leasing"
+            color="gray"
+            text="micro-leasing"
+          />{" "}
+          a car on Turo
+        </Alert>{" "}
       </h2>
-      <hr style={{ padding: "2.5px" }} />
-      <h3>Lease Details</h3>
 
       <>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">Down Payment:</InputGroup.Text>
-          <FormControl
-            type="number"
-            aria-label="USD"
-            aria-describedby="basic-addon1"
-          />
-          <InputGroup.Text id="basic-addon2">$</InputGroup.Text>
-        </InputGroup>
-
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon2">Lease Payment</InputGroup.Text>
-          <FormControl
-            type="number"
-            aria-label="Monthly payment"
-            aria-describedby="basic-addon2"
-          />
-          <InputGroup.Text id="basic-addon2">$/month</InputGroup.Text>
-        </InputGroup>
-
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon3">Length of Lease</InputGroup.Text>
-          <FormControl
-            type="number"
-            id="basic-url"
-            aria-describedby="basic-addon3"
-          />
-          <InputGroup.Text id="basic-addon2"># months</InputGroup.Text>
-        </InputGroup>
+        <LeaseDetails />
 
         <h1></h1>
 

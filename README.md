@@ -8,9 +8,8 @@
   Turo Calculator
 </h1>
 
-This is an open-source project that helps potential hosts on Turo to calculate their potential earnings by renting out their cars on the platform. 
+This is an open-source project that helps potential hosts on Turo to calculate their potential earnings by renting out their cars on the platform.
 
-_Have another more specific idea? Check out the [contributors readme!](Contributing.md)._
+_Have an idea and want to contribute? Check out the [contributors readme!](Contributing.md)._
 
-
-
+> Have a blog post idea? Check out the blog post quick start instructions under quickstart - pages/blog
