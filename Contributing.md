@@ -6,7 +6,7 @@ The following is a set of questions you'll probably ask yourself before you do i
 
 ### Hey, how do I set this up on my machine?
 
-This project uses Gatsby 4. It's still in beta, but technically so is this project 🤷‍♀️
+This project uses [Gatsby 4](https://www.gatsbyjs.com/) which is a ReactJS framework. It's still in beta, but technically so is this project 🤷‍♀️. The interface (buttons, inputs etc.) are all components from [React Bootstrap](https://react-bootstrap.github.io/).
 
 1. First clone this project into a comfy directory.
 
@@ -22,7 +22,7 @@ npm install
 gatsby develop
 ```
 
-> This will open up a local development port at `localhost:8000` and you're set!
+> This will open up a development port at `localhost:8000` and you're all set for local development!
 
 ### Hey, what should I work on??
 
@@ -31,13 +31,13 @@ Here's a running list of features that need to be added:
 1. Add `section` for people who've bought their car completely
 2. Add `section` for people who've financed their car
 3. Add `section` for people to customize their make and model and get a cost per month that way
-4. Add a way for people to save their calculated costs inputs (cookies would do the job)
+4. Add a way for people to save their calculated costs & inputs (cookies would do the job)
 5. Work on the index page at `/blog` so that it shows a list of all blog posts
-6. Provide helpful ranges for certain inputs like cost of gas/electricity (in a tooltip maybe)
+6. Provide helpful ranges for certain inputs like cost of gas/electricity (in a tooltip maybe)s
 
 #### More generally expand the functionality of it! Just do it!
 
-### Hey, what do all these confusing files mean???
+### Hey, what do all these confusing directories & files mean???
 
 #### `/src/`
 
@@ -79,4 +79,4 @@ Definitions for all customm interfaces and enums
 
 #### Design Principles
 
-Try to use human-centered design
+Try to use human-centered design and provide people with a seemless user experience. That is the design goal for this project.
