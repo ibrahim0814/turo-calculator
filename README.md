@@ -4,6 +4,6 @@
 
 This is an open-source project that helps new hosts on Turo calculate their potential earnings per month by renting out their cars on the platform.
 
-_Have an idea and want to contribute? Check out the [contributors readme!](contributing.md)_
+_Have an idea and want to contribute? Check out the [contributors readme!](contributors.md)_
 
-> Have a blog post idea? Check out the [blog post quick start](contributing.md#pagesblog) instructions under in the contributors readme quickstart section
+> Have a blog post idea? Check out the [blog post quick start](contributors.md#pagesblog) instructions under in the contributors readme quickstart section
