@@ -9,11 +9,11 @@ const Header = ({ siteTitle }) => (
       background: `gray`,
       marginBottom: `1.45rem`,
       textAlign: "center",
+      borderRadius: ".3rem",
     }}
   >
     <div
       style={{
-        maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
         display: "flex",
         justifyContent: "center",
@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <StaticImage
-        src="../images/turo-logo.png"
+        src="../../images/turo-logo.png"
         width={140}
         quality={95}
         formats={["auto", "webp", "avif"]}

@@ -4,24 +4,22 @@ import { StaticImage } from "gatsby-plugin-image"
 import { InputGroup, FormControl, Form, Button, Alert } from "react-bootstrap"
 import LeaseDetails from "../components/sections/lease-details"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import GatsbyLinkStyled from "../components/gatsby-link-styled"
+import Layout from "../components/shared/layout"
+import Seo from "../components/shared/seo"
+import GatsbyLinkStyled from "../components/shared/gatsby-router-link-styled"
 
 const initialState = {
-  lease: {
-    down: 3000,
-    monthly: 300,
-    leaseLen: 36,
-  },
+  lease: 0,
+  operating: 0,
+  income: 0,
 }
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "increment":
-      return { count: state.count + 1 }
+      return { ...state }
     case "decrement":
-      return { count: state.count - 1 }
+      return { ...state }
     default:
       throw new Error()
   }
@@ -33,7 +31,7 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Turo Earnings Calculator" />
 
-      <h2 style={{ textAlign: "center" }}>
+      <h3 style={{ textAlign: "center" }}>
         <Alert variant="secondary">
           Estimate earnings from{" "}
           <GatsbyLinkStyled
@@ -43,10 +41,10 @@ const IndexPage = () => {
           />{" "}
           a car on Turo
         </Alert>{" "}
-      </h2>
+      </h3>
 
       <>
-        <LeaseDetails />
+        <LeaseDetails setLeaseOutput={() => dispatch({ type: "decrement" })} />
 
         <h1></h1>
 

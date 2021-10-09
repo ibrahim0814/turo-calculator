@@ -8,11 +8,10 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
 import Header from "./header"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./layout.css"
+import Navigation from "./navigation"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,13 +26,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Navigation />
+
       <Header siteTitle="Earnings Calculator" />
 
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          padding: `0`,
+          minHeight: "100%",
+          bottom: "0",
         }}
       >
         <main>{children}</main>
@@ -41,6 +43,7 @@ const Layout = ({ children }) => {
           style={{
             marginTop: `2rem`,
             textAlign: "center",
+            height: "100v",
           }}
         >
           <a

@@ -1,5 +1,5 @@
 import React from "react"
-import { IAlertWithLinkBootstrap } from "../interfaces/interfaces"
+import { IAlertWithLinkBootstrap } from "../../interfaces/interfaces"
 import { Link } from "gatsby"
 
 const GatsbyLinkStyled = (props: IAlertWithLinkBootstrap) => {
