@@ -1,5 +1,3 @@
-import { LeaseTypes } from "./enums";
-
 export interface IAlertWithLinkBootstrap {
     page: string
     color: string
@@ -7,8 +5,7 @@ export interface IAlertWithLinkBootstrap {
 }
 
 export interface ILeaseDetails {
-    total: number,
-    setTotal: ()=>{}
+    setLeaseOutput: Function
 }
 
 export interface IColoredALink {
@@ -19,7 +16,8 @@ export interface IColoredALink {
 
 export interface ILeaseDetailsState {
     down: number,
-    monthly: number,
-    leaseLength: LeaseTypes
+    monthlyLeasePayment: number,
+    leaseLength: number
+    totalMonthlyCost: number
 }
 
