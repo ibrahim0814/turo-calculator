@@ -1,15 +1,16 @@
 import React from "react"
-import { Alert } from "react-bootstrap"
+import BackToCalculator from "../../components/back-to-calculator"
+import BlogFooter from "../../components/blog-footer"
+
 import ColoredALink from "../../components/shared/colored-a-link"
 import GatsbyLinkStyled from "../../components/shared/gatsby-router-link-styled"
+
 import Layout from "../../components/shared/layout"
 
 const MicroRenting = () => {
   return (
     <Layout>
-      <Alert variant="secondary">
-        <GatsbyLinkStyled page="/" color="gray" text="Back to Calculator" />{" "}
-      </Alert>{" "}
+      <BackToCalculator />{" "}
       <div style={{ padding: "1rem" }}>
         <h2>What is micro-renting?</h2>
         <p>
@@ -22,6 +23,8 @@ const MicroRenting = () => {
             link="https://turo.com/us/en/car-rental/united-states"
           />
         </p>
+
+        <BlogFooter />
       </div>
     </Layout>
   )

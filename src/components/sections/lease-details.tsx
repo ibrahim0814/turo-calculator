@@ -1,6 +1,6 @@
 import React, { useReducer } from "react"
 import { InputGroup, FormControl, Form } from "react-bootstrap"
-import { ILeaseDetails, ILeaseDetailsState } from "../../interfaces/interfaces"
+import { ILeaseDetailsState, ISection } from "../../interfaces/interfaces"
 import SectionHeader from "./section-header"
 
 const initialState: ILeaseDetailsState = {
@@ -73,7 +73,7 @@ const reducer = (state: ILeaseDetailsState, action): ILeaseDetailsState => {
   return newState
 }
 
-const LeaseDetails = (props: ILeaseDetails) => {
+const LeaseDetails = (props: ISection) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
@@ -82,6 +82,7 @@ const LeaseDetails = (props: ILeaseDetails) => {
         title="Lease Details"
         sectionMonthlyCostOrIncome={state.totalMonthlyCost}
         totalCost={state.totalCost}
+        type={props.type}
       />
 
       <Form>

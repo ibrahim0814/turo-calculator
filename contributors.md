@@ -34,6 +34,7 @@ Here's a running list of features that need to be added:
 4. Add a way for people to save their calculated costs & inputs without requiring authentication (cookies would do the job)
 5. Work on the index page at `/blog` so that it shows a list of all blog posts
 6. Provide helpful ranges for certain inputs like cost of gas/electricity (in a tooltip maybe)
+7. Integrate other sources of income besides the flat daily rate
 
 #### More generally expand the functionality of it! Just do it!
 

@@ -5,7 +5,7 @@ const PillBadge = (props: IPillBadge) => {
   return (
     <span
       style={{
-        backgroundColor: "gray",
+        backgroundColor: props.color,
         padding: "7px 10px 7px 10px",
         borderRadius: "15px",
         color: "white",

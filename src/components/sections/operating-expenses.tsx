@@ -1,9 +1,6 @@
 import React, { useReducer } from "react"
 import { Form, InputGroup, FormControl } from "react-bootstrap"
-import {
-  IOperatingExpensesState,
-  IOperatingExpenses,
-} from "../../interfaces/interfaces"
+import { IOperatingExpensesState, ISection } from "../../interfaces/interfaces"
 import SectionHeader from "./section-header"
 
 const initialState: IOperatingExpensesState = {
@@ -45,13 +42,14 @@ const reducer = (
   return { ...newState, totalMonthlyCost: newTotalMonthlyOperatingCost }
 }
 
-const OperatingExpenses = (props: IOperatingExpenses) => {
+const OperatingExpenses = (props: ISection) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <>
       <SectionHeader
         title="Expenses"
         sectionMonthlyCostOrIncome={state.totalMonthlyCost}
+        type={props.type}
       />
       <Form>
         <InputGroup className="mb-3">

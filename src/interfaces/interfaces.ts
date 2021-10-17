@@ -1,11 +1,9 @@
+import { SectionType } from "./enums"
+
 export interface IAlertWithLinkBootstrap {
   page: string
   color: string
   text: string
-}
-
-export interface ILeaseDetails {
-  setLeaseOutput: Function
 }
 
 export interface IColoredALink {
@@ -27,10 +25,7 @@ export interface ISectionTemplate {
   sectionMonthlyCostOrIncome: number
   children?: JSX.Element | JSX.Element[]
   totalCost?: number
-}
-
-export interface IOperatingExpenses {
-  setOpExpensesOutput: Function
+  type: SectionType
 }
 
 export interface IOperatingExpensesState {
@@ -41,10 +36,6 @@ export interface IOperatingExpensesState {
   totalMonthlyCost: number
 }
 
-export interface IExpectedIncome {
-  setExpectedIncomeOutput: Function
-}
-
 export interface IExpectedIncomeState {
   costPerDay: number
   daysRented: number
@@ -53,4 +44,9 @@ export interface IExpectedIncomeState {
 
 export interface IPillBadge {
   text: string
+  color: string
+}
+
+export interface ISection {
+  type: SectionType
 }

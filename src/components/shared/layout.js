@@ -46,6 +46,7 @@ const Layout = ({ children }) => {
             height: "100v",
           }}
         >
+          <hr style={{ padding: "1.5px" }} />
           <a
             href="https://github.com/ibrahim0814/turo-calculator"
             target="_blank"
