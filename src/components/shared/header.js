@@ -20,7 +20,7 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <img
-        src={"turo-logo.png"}
+        src="https://1000logos.net/wp-content/uploads/2020/09/Turo-logo.png"
         style={{ width: "140px", paddingTop: "1.15rem" }}
       />
       <h1 style={{ paddingLeft: "1rem", paddingTop: "1.1rem" }}>
