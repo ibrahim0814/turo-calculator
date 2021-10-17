@@ -2,6 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import TuroImage from "../../images/turo-logo.png"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -20,13 +21,7 @@ const Header = ({ siteTitle }) => (
         alignItems: "center",
       }}
     >
-      <StaticImage
-        src="../../images/turo-logo.png"
-        width={140}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt="Turo Logo"
-      />
+      <img src={TuroImage} style={{ width: "140px", paddingTop: "1.15rem" }} />
       <h1 style={{ paddingLeft: "1rem", paddingTop: "1.1rem" }}>
         <Link
           to="/"
