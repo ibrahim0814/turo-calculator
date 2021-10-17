@@ -8,17 +8,31 @@ const initialState: ILeaseDetailsState = {
   monthlyLeasePayment: 200,
   leaseLength: 36,
   totalMonthlyCost: 255.55,
+  totalCost: 9200,
 }
 
 const calculateTotalMonthlyLeaseCost = (
   leaseDetails: ILeaseDetailsState
 ): number => {
-  let totalCost: number
+  let totalMonthlyCost: number
   if (leaseDetails.leaseLength >= 0 && leaseDetails.monthlyLeasePayment >= 0) {
-    totalCost =
+    totalMonthlyCost =
       (leaseDetails.leaseLength * leaseDetails.monthlyLeasePayment +
         leaseDetails.down) /
       leaseDetails.leaseLength
+  } else {
+    totalMonthlyCost = 0
+  }
+
+  return totalMonthlyCost
+}
+
+const calculateTotalLeaseCost = (leaseDetails: ILeaseDetailsState): number => {
+  let totalCost: number
+  if (leaseDetails.leaseLength >= 0 && leaseDetails.monthlyLeasePayment >= 0) {
+    totalCost =
+      leaseDetails.leaseLength * leaseDetails.monthlyLeasePayment +
+      leaseDetails.down
   } else {
     totalCost = 0
   }
@@ -49,10 +63,12 @@ const reducer = (state: ILeaseDetailsState, action): ILeaseDetailsState => {
   }
 
   let newTotalMonthlyCost = calculateTotalMonthlyLeaseCost(newState)
+  let newTotalCost = calculateTotalLeaseCost(newState)
 
   newState = {
     ...newState,
     totalMonthlyCost: newTotalMonthlyCost,
+    totalCost: newTotalCost,
   }
   return newState
 }
@@ -65,40 +81,41 @@ const LeaseDetails = (props: ILeaseDetails) => {
       <SectionHeader
         title="Lease Details"
         sectionMonthlyCostOrIncome={state.totalMonthlyCost}
+        totalCost={state.totalCost}
       />
 
       <Form>
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">Down Payment:</InputGroup.Text>
+          <InputGroup.Text>Down Payment:</InputGroup.Text>
           <FormControl
             type="number"
-            aria-label="Down payment input"
+            aria-label="Down payment amount"
             onChange={e => dispatch({ type: "down", payload: e })}
             defaultValue={2000}
           />
-          <InputGroup.Text id="basic-addon2">$</InputGroup.Text>
+          <InputGroup.Text>$</InputGroup.Text>
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon2">Lease Payment</InputGroup.Text>
+          <InputGroup.Text>Lease Payment</InputGroup.Text>
           <FormControl
             type="number"
-            aria-label="Monthly payment input"
+            aria-label="Monthly lease payment"
             onChange={e => dispatch({ type: "monthly", payload: e })}
             defaultValue={200}
           />
-          <InputGroup.Text id="basic-addon2">$/month</InputGroup.Text>
+          <InputGroup.Text>$/month</InputGroup.Text>
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon3">Length of Lease</InputGroup.Text>
+          <InputGroup.Text>Length of Lease</InputGroup.Text>
           <FormControl
             type="number"
             aria-label="Length of lease input"
             onChange={e => dispatch({ type: "lease", payload: e })}
             defaultValue={36}
           />
-          <InputGroup.Text id="basic-addon2"># months</InputGroup.Text>
+          <InputGroup.Text># months</InputGroup.Text>
         </InputGroup>
       </Form>
     </>

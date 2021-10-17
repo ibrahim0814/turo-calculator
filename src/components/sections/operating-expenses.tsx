@@ -1,18 +1,10 @@
 import React, { useReducer } from "react"
 import { Form, InputGroup, FormControl } from "react-bootstrap"
+import {
+  IOperatingExpensesState,
+  IOperatingExpenses,
+} from "../../interfaces/interfaces"
 import SectionHeader from "./section-header"
-
-interface IOperatingExpenses {
-  setOpExpensesOutput: Function
-}
-
-interface IOperatingExpensesState {
-  insurance: number
-  maintainance: number
-  fuel: number
-  misc: number
-  totalMonthlyCost: number
-}
 
 const initialState: IOperatingExpensesState = {
   insurance: 100,
@@ -63,47 +55,47 @@ const OperatingExpenses = (props: IOperatingExpenses) => {
       />
       <Form>
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">Insurance:</InputGroup.Text>
+          <InputGroup.Text>Insurance:</InputGroup.Text>
           <FormControl
             type="number"
-            aria-label="USD"
+            aria-label="insurance payment per month"
             onChange={e => dispatch({ type: "insurance", payload: e })}
             defaultValue={100}
           />
-          <InputGroup.Text id="basic-addon2">$/month</InputGroup.Text>
+          <InputGroup.Text>$/month</InputGroup.Text>
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon3">Cost of fuel:</InputGroup.Text>
+          <InputGroup.Text>Cost of fuel:</InputGroup.Text>
           <FormControl
             type="number"
-            id="basic-url"
+            aria-label="cost of fuel per month"
             onChange={e => dispatch({ type: "fuel", payload: e })}
             defaultValue={100}
           />
-          <InputGroup.Text id="basic-addon2">$/month</InputGroup.Text>
+          <InputGroup.Text>$/month</InputGroup.Text>
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon2">Maintainance:</InputGroup.Text>
+          <InputGroup.Text>Maintainance:</InputGroup.Text>
           <FormControl
             type="number"
-            aria-label="Monthly payment"
+            aria-label="cost of maintainance per month"
             onChange={e => dispatch({ type: "maintainance", payload: e })}
             defaultValue={50}
           />
-          <InputGroup.Text id="basic-addon2">$/month</InputGroup.Text>
+          <InputGroup.Text>$/month</InputGroup.Text>
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon3">Micellaneous:</InputGroup.Text>
+          <InputGroup.Text>Micellaneous:</InputGroup.Text>
           <FormControl
             type="number"
-            id="basic-url"
+            aria-label="miscellaneous costs per month"
             onChange={e => dispatch({ type: "misc", payload: e })}
             defaultValue={25}
           />
-          <InputGroup.Text id="basic-addon2">$/month</InputGroup.Text>
+          <InputGroup.Text>$/month</InputGroup.Text>
         </InputGroup>
       </Form>
     </>

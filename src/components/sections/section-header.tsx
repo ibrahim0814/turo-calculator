@@ -1,17 +1,13 @@
 import React from "react"
-
-interface ISectionTemplate {
-  title: string
-  sectionMonthlyCostOrIncome: number
-  children?: JSX.Element | JSX.Element[]
-}
+import { ISectionTemplate } from "../../interfaces/interfaces"
+import PillBadge from "../shared/pill-badge"
 
 const SectionHeader = (props: ISectionTemplate) => {
   return (
     <div>
       <hr style={{ padding: "2.5px" }} />
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <h3 style={{ flexGrow: 1 }}>{props.title}</h3>
+        <h3 style={{ flexGrow: 1, fontSize: "1.2rem" }}>{props.title}</h3>
         <div
           style={{
             flexGrow: 1,
@@ -19,18 +15,9 @@ const SectionHeader = (props: ISectionTemplate) => {
           }}
         >
           <p>
-            <span
-              style={{
-                backgroundColor: "gray",
-                padding: "10px",
-                borderRadius: "5px",
-                color: "white",
-                fontSize: ".9rem",
-              }}
-            >
-              {" "}
-              ${props.sectionMonthlyCostOrIncome.toFixed(2)} /month
-            </span>
+            <PillBadge
+              text={`$${props.sectionMonthlyCostOrIncome.toFixed(2)} /month`}
+            />
           </p>
         </div>
       </div>

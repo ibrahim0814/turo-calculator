@@ -15,7 +15,7 @@ const Navigation = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
           </div>
 
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse>
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/" style={{ color: "gray" }}>
                 Home
@@ -33,7 +33,7 @@ const Navigation = () => {
 
 const NavigationStyleWrapper = styled.div`
   .navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;..");
+    color: white;
   }
 `
 

@@ -1,16 +1,10 @@
 import React, { useReducer } from "react"
 import { Form, InputGroup, FormControl } from "react-bootstrap"
+import {
+  IExpectedIncomeState,
+  IExpectedIncome,
+} from "../../interfaces/interfaces"
 import SectionHeader from "./section-header"
-
-interface IExpectedIncome {
-  setExpectedIncomeOutput: Function
-}
-
-interface IExpectedIncomeState {
-  costPerDay: number
-  daysRented: number
-  totalMonthlyIncome: number
-}
 
 const initialState: IExpectedIncomeState = {
   costPerDay: 80,
@@ -47,30 +41,30 @@ const ExpectedIncome = (props: IExpectedIncome) => {
   return (
     <>
       <SectionHeader
-        title="Expenses"
+        title="Income"
         sectionMonthlyCostOrIncome={state.totalMonthlyIncome}
       />
       <Form>
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">Price per day:</InputGroup.Text>
+          <InputGroup.Text>Price per day:</InputGroup.Text>
           <FormControl
             type="number"
             aria-label="USD"
             onChange={e => dispatch({ type: "costPerDay", payload: e })}
             defaultValue={80}
           />
-          <InputGroup.Text id="basic-addon2">$/day</InputGroup.Text>
+          <InputGroup.Text>$/day</InputGroup.Text>
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon2">Days rented</InputGroup.Text>
+          <InputGroup.Text>Days rented</InputGroup.Text>
           <FormControl
             type="number"
             aria-label="Monthly payment"
             onChange={e => dispatch({ type: "daysRented", payload: e })}
             defaultValue={10}
           />
-          <InputGroup.Text id="basic-addon2">/month</InputGroup.Text>
+          <InputGroup.Text>/month</InputGroup.Text>
         </InputGroup>
       </Form>
     </>

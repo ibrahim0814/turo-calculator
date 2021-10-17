@@ -2,7 +2,7 @@
 
 First off, thanks for taking the time to contribute!
 
-The following is a set of questions you'll probably ask yourself before you do it:
+The following is a set of questions you'll probably ask yourself before you start:
 
 ### Hey, how do I set this up on my machine?
 
@@ -31,9 +31,9 @@ Here's a running list of features that need to be added:
 1. Add `section` for people who've bought their car completely
 2. Add `section` for people who've financed their car
 3. Add `section` for people to customize their make and model and get a cost per month that way
-4. Add a way for people to save their calculated costs & inputs (cookies would do the job)
+4. Add a way for people to save their calculated costs & inputs without requiring authentication (cookies would do the job)
 5. Work on the index page at `/blog` so that it shows a list of all blog posts
-6. Provide helpful ranges for certain inputs like cost of gas/electricity (in a tooltip maybe)s
+6. Provide helpful ranges for certain inputs like cost of gas/electricity (in a tooltip maybe)
 
 #### More generally expand the functionality of it! Just do it!
 
@@ -73,7 +73,7 @@ Global CSS styles
 
 #### `/interfaces/`
 
-Definitions for all customm interfaces and enums
+Definitions for all custom interfaces and enums
 
 ### Other
 
